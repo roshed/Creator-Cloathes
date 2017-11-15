@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-md-12">
                     <h1>Creator Cloathes</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-md-12">
                     <div id="selectItem">
                         <a href="tshirt" class="clickItem">
                             <img src="img/tshirt.jpg" alt="T-Shirt" height="80"/>
@@ -31,30 +31,29 @@
 
             <div class="content">
                 <div class="row">
-                    <div class="col-3" id="leftPanel">
-                        <a href="#" class="btn btn-warning btn-lg">Cena / Szt</a>
+                    <div class="col-md-3" id="leftPanel">
+                        <a href="#" class="btn btn-warning btn-lg btn-block">Cena / Szt</a>
 
-                        <a href="#" class="btn btn-success btn-lg">Dodaj do koszyka</a>
+                        <a href="#" class="btn btn-success btn-lg btn-block">Dodaj do koszyka</a>
                         
-                        <a href="#" class="btn btn-info btn-lg">Koszty wysyłki</a>
+                        <a href="#" class="btn btn-info btn-lg btn-block">Koszty wysyłki</a>
                     </div>
 
-                    <div class="col-5" id="wizardPanel">
-
+                    <div class="col-md-5" id="wizardPanel">
+                        <div class="col-md-12 text-right menage">
+                            <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
+                            <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
+                            <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
+                        </div>
+                        <div class="wizardPanel"></div>
                     </div>
 
-                    <div class="col-4">
-                            <a href="#" class="btn btn-secondary col-12">Wzornik kolorów</a>
+                    <div class="col-md-4">
+                            <a href="#" class="btn btn-secondary btn-lg btn-block">Wzornik kolorów</a>
 
-                            <a href="#" class="btn btn-danger col-12">Rozmiary</a>
+                            <a href="#" class="btn btn-danger btn-lg btn-block">Rozmiary</a>
 
-                            <div class="col-12 text-center">
-                                <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
-                                <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
-                                <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
-                            </div>
-
-                            <a href="#" class="btn btn-success col-12">Zapisz Projekt</a>
+                            <a href="#" class="btn btn-success btn-lg btn-block">Zapisz Projekt</a>
                     </div>
                 </div>
             </div>
@@ -64,14 +63,13 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
             $(function(){
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
-                    $("#wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive"/> ');
+                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive"/> ');
 
                     return false;
                     alert(attr);

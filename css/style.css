@@ -19,3 +19,7 @@
     width:100%;
     height:auto;
 }
+.menage{
+    position:fixed;
+    bottom: 0px;
+}
