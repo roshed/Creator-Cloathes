@@ -40,12 +40,12 @@
                     </div>
 
                     <div class="col-md-5" id="wizardPanel">
-                        <div class="col-md-12 text-right menage">
-                            <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
-                            <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
-                            <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
-                        </div>
                         <div class="wizardPanel"></div>
+                        <div class="menage">
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
+                            </div>
                     </div>
 
                     <div class="col-md-4">
@@ -66,6 +66,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
             $(function(){
+                $(".wizardPanel").html('<img src="img/tshirt.jpg" alt="Wizard Panel" class="img-responsive"/> ');
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
