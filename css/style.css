@@ -1,0 +1,21 @@
+#selectItem{
+    padding: 15px;
+    border: 1px solid #333333;
+    border-radius:7px;
+    overflow-x: auto;
+}
+#selectItem a{
+    margin-left:5%;
+}
+.content{margin-top:35px;}
+#leftPanel a{
+    margin-bottom:70px;
+}
+#wizardPanel{
+    border: 1px solid #333333;
+    max-width:70%;
+}
+.img-responsive{
+    width:100%;
+    height:auto;
+}

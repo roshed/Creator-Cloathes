@@ -5,17 +5,78 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Creator Cloathes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="selectItem">
+                        <a href="tshirt" class="clickItem">
+                            <img src="img/tshirt.jpg" alt="T-Shirt" height="80"/>
+                        </a>
+                        <a href="hoodie" class="clickItem">
+                            <img src="img/hoodie.jpg" alt="Hoodie" height="80"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-3" id="leftPanel">
+                        <a href="#" class="btn btn-warning btn-lg">Cena / Szt</a>
+
+                        <a href="#" class="btn btn-success btn-lg">Dodaj do koszyka</a>
+                        
+                        <a href="#" class="btn btn-info btn-lg">Koszty wysyłki</a>
+                    </div>
+
+                    <div class="col-5" id="wizardPanel">
+
+                    </div>
+
+                    <div class="col-4">
+                            <a href="#" class="btn btn-secondary col-12">Wzornik kolorów</a>
+
+                            <a href="#" class="btn btn-danger col-12">Rozmiary</a>
+
+                            <div class="col-12 text-center">
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
+                                <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
+                            </div>
+
+                            <a href="#" class="btn btn-success col-12">Zapisz Projekt</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script>
+            $(function(){
+                $('.clickItem').click(function(){
+                    var attr = $(this).attr('href');
+                    var link = "img/"+attr+".jpg";
+                    $("#wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive"/> ');
+
+                    return false;
+                    alert(attr);
+                });
+            });
+        </script>
   </body>
 </html>
