@@ -41,3 +41,12 @@
 .front{
     display: none;
 }
+
+.add-file{
+    position: absolute;
+}
+
+.added-file{
+    width: 100px;
+    height: auto;
+}

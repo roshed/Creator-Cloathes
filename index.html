@@ -44,7 +44,9 @@
                         <div class="menage">
                                 <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
                                 <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
-                                <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
+                                <input type="file" id="image" class="btn btn-danger btn-sm" value="Dodaj plik">
+                                <input type="submit" id="add-file" class="btn btn-danger btn-sm" value="Dodaj!">
+
                         </div>
                         <div class="rotate">
                                 <a href="#" class="front">
@@ -69,6 +71,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
             $(function(){
@@ -100,6 +104,12 @@
                     $(this).hide();
                     $('.back').show();
                 });
+            });
+            $('#add-file').click(function(){
+                var image = $('#image').value;
+                alert(image) ;
+                $('.wizardPanel').prepend('<div class="add-file"><img src="'+image+'"class="added-file"/></div>');
+                $('.add-file').draggable({ containment: "#wizardPanel", scroll: false });
             });
 
 
