@@ -45,7 +45,13 @@
                                 <a href="#" class="btn btn-danger btn-sm">Dodaj tekst</a>
                                 <a href="#" class="btn btn-danger btn-sm">Dodaj wzór</a>
                                 <a href="#" class="btn btn-danger btn-sm">Dodaj plak</a>
-                            </div>
+                        </div>
+                        <div class="rotate">
+                                <a href="#" class="front">
+                                </a>
+                                <a href="#" class="back">
+                                </a>
+                        </div>
                     </div>
 
                     <div class="col-md-4">
@@ -66,16 +72,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
             $(function(){
-                $(".wizardPanel").html('<img src="img/tshirt.jpg" alt="Wizard Panel" class="img-responsive"/> ');
+                $(".wizardPanel").html('<img src="img/tshirt.jpg" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive"/> ');
+                $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive"/> ');
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
-                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive"/> ');
+                    var linkb = "img/"+attr+"b.jpg";
+                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                    $(".front").html('<img src="'+link+'" alt="Przód" class="height-responsive"/> ');
+                    $(".back").html('<img src="'+linkb+'" alt="Tył" class="height-responsive"/> ');
 
                     return false;
                     alert(attr);
                 });
+                $('.back').click(function(){
+                     var attr = $(".img-wizard").attr('src');
+                     var link = attr.replace(".jpg","b.jpg");
+                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                    $(this).hide();
+                    $('.front').show();
+                });
+                $('.front').click(function(){
+                     var attr = $(".img-wizard").attr('src');
+                     var link = attr.replace("b.jpg",".jpg");
+                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                    $(this).hide();
+                    $('.back').show();
+                });
             });
+
+
         </script>
   </body>
 </html>

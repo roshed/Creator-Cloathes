@@ -25,5 +25,19 @@
     bottom: 0px;
 }
 
+.rotate{
+    position: absolute;
+    left: 0;
+    bottom: -80px;
+    height: 60px;
+    width: 100%;
+}
 
-hjgfjhvbnm,nkjjlbvd
+.front{
+    display: none;
+}
+
+.height-responsive{
+    height: 100%;
+    width: auto;
+}
