@@ -33,11 +33,11 @@
     width: 100%;
 }
 
-.front{
-    display: none;
-}
-
 .height-responsive{
     height: 100%;
     width: auto;
+}
+
+.front{
+    display: none;
 }
