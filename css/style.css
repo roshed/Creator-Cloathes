@@ -33,9 +33,10 @@
     height:auto;
 }
 .menage{
+    display: inline-block;
     position:absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 2px;
+    bottom: 2px;
 }
 
 .rotate{
@@ -51,9 +52,6 @@
     width: auto;
 }
 
-.front{
-    display: none;
-}
 
 .add-file{
     position: absolute;
@@ -67,6 +65,11 @@
     height: 100%;
 }
 
-.ui-icon-gripsmall-diagonal-se{
-    
+.image-preview{
+    height: 200px;
+    width: 200px;
+}
+
+#image, .text-form, .front{
+    display: none;
 }
