@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
@@ -32,74 +33,11 @@
             <div class="content">
                 <div class="row">
                     <div class="col-md-3" id="leftPanel">
-                        <a href="#" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#price">Cena / Szt</a>
+                        <a href="#" class="btn btn-warning btn-lg btn-block">Cena / Szt</a>
 
-                    <!-- Modal Cena/ Szt-->
-                    <div id="price" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Cena / Szt</h4>
-                                </div>
-                                <div class="modal-body">
-                                <p>Lorem Ipsum - Cena / Szt</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                        <a href="#" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#addToBasket">Dodaj do koszyka</a>
+                        <a href="#" class="btn btn-success btn-lg btn-block">Dodaj do koszyka</a>
                         
-                         <!-- Modal Dodaj do koszyka-->
-                         <div id="addToBasket" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Dodaj do koszyka</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper consectetur ligula non tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis id ipsum ex. Fusce pellentesque viverra elit vel commodo.</p>
-                                    <a href="#" class="btn btn-success btn-lg btn-block">Dodaj do koszyka</a>
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="#" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#priceDeliver">Koszty wysyłki</a>
-                        <!-- Modal Koszty wysylki-->
-                        <div id="priceDeliver" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Koszty wysyłki</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                        <form>
-                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka ekonomiczna - 8 zł<br>
-                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka kurierska - 13 zł<br>
-                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka kurierska za pobraniem - 20 zł<br>
-                                        </form>
-                                        <a href="#" class="btn btn-info btn-lg btn-block">Wybierz</a>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <a href="#" class="btn btn-info btn-lg btn-block">Koszty wysyłki</a>
                     </div>
 
                     <div class="col-md-5" id="wizardPanel">
@@ -139,34 +77,35 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
             $(function(){
-                $(".wizardPanel").html('<img src="img/tshirt.jpg" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                $("#wizardPanel").css("background-image", "url(img/tshirt.jpg)");
                 $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive"/> ');
                 $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive"/> ');
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
                     var linkb = "img/"+attr+"b.jpg";
-                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
-                    $(".front").html('<img src="'+link+'" alt="Przód" class="height-responsive"/> ');
-                    $(".back").html('<img src="'+linkb+'" alt="Tył" class="height-responsive"/> ');
+                    $("#wizardPanel").css("background-image", "url("+link+")");
+                    $(".front").html('<img src="'+link+'" alt="Przód" class="height-responsive link"/> ');
+                    $(".back").html('<img src="'+linkb+'" alt="Tył" class="height-responsive linkb"/> ');
 
                     return false;
                     alert(attr);
                 });
+                
                 $('.back').click(function(){
-                     var attr = $(".img-wizard").attr('src');
-                     var link = attr.replace(".jpg","b.jpg");
-                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                     var link = $(".linkb").attr('src');
+                    $("#wizardPanel").css("background-image", "url("+link+")");
                     $(this).hide();
                     $('.front').show();
                 });
+                
                 $('.front').click(function(){
-                     var attr = $(".img-wizard").attr('src');
-                     var link = attr.replace("b.jpg",".jpg");
-                    $(".wizardPanel").html('<img src="'+link+'" alt="Wizard Panel" class="img-responsive img-wizard"/> ');
+                     var link = $(".link").attr('src');
+                    $("#wizardPanel").css("background-image", "url("+link+")");
                     $(this).hide();
                     $('.back').show();
                 });
+                
             });
             
                 function readURL(input) {
@@ -175,14 +114,17 @@
                         var reader = new FileReader();
 
                     reader.onload = function(e) {
-                    $('#added-file').attr('src', e.target.result);}
+                    $(".load").attr('src', e.target.result);}
 
-                     reader.readAsDataURL(input.files[0]);}}
+                     reader.readAsDataURL(input.files[0]);};};
 
-                            $("#image").change(function() {
-                $('.wizardPanel').prepend('<img src="#" id="added-file" class="add-file"/>');
+                $("#image").change(function() {
                 readURL(this);
-                $('.add-file').draggable({ containment: "#wizardPanel", scroll: false });
+                $('.wizardPanel').prepend('<div class="add-file"><img src="#" class="added-img load"/></div>');
+                $('.add-file')
+                .resizable()
+                .draggable({ containment: "#wizardPanel", scroll: false });
+                $(".added-img").removeClass("load");
 });
           
             

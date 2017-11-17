@@ -12,9 +12,20 @@
     margin-bottom:70px;
 }
 #wizardPanel{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 1px solid #333333;
     max-width:70%;
+    height: 600px;
 }
+
+.wizardPanel{
+    height: 100%;
+    width: 100%;
+
+}
+
 .img-responsive{
     width:100%;
     height:auto;
@@ -48,7 +59,11 @@
     height: 100px;
 }
 
-.added-file{
-    width: 100px;
-    height: auto;
+.added-img{
+    width: 100%;
+    height: 100%;
+}
+
+.ui-icon-gripsmall-diagonal-se{
+    
 }
