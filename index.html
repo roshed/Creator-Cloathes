@@ -119,12 +119,12 @@
                      reader.readAsDataURL(input.files[0]);};};
 
                 $("#image").change(function() {
-                readURL(this);
-                $('.wizardPanel').prepend('<div class="add-file"><img src="#" class="added-img load"/></div>');
-                $('.add-file')
-                .resizable()
-                .draggable({ containment: "#wizardPanel", scroll: false });
-                $(".added-img").removeClass("load");
+                    readURL(this);
+                    $('.wizardPanel').prepend('<div class="add-file"><img src="#" class="added-img load"/></div>');
+                    $('.add-file')
+                        .resizable()
+                        .draggable({ containment: "#wizardPanel", scroll: false });
+                    
 });
           
             
