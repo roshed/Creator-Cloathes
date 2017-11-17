@@ -188,7 +188,7 @@
                     $('.wizardPanel').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
                     
                     $('.add-file')
-                        .resizable()
+                        .resizable({containment: "#wizardPanel"})
                         .draggable({ containment: "#wizardPanel", scroll: false, stack: "#wizardPanel div"});
                 });
                     
