@@ -33,11 +33,75 @@
             <div class="content">
                 <div class="row">
                     <div class="col-md-3" id="leftPanel">
-                        <a href="#" class="btn btn-warning btn-lg btn-block">Cena / Szt</a>
 
-                        <a href="#" class="btn btn-success btn-lg btn-block">Dodaj do koszyka</a>
-                        
-                        <a href="#" class="btn btn-info btn-lg btn-block">Koszty wysyłki</a>
+                    <a href="#" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#price">Cena / Szt</a>
+
+               <!-- Modal Cena/ Szt-->
+ +                    <div id="price" class="modal fade" role="dialog">
+ +                        <div class="modal-dialog">
+ +                            <!-- Modal content-->
+ +                            <div class="modal-content">
+ +                                <div class="modal-header">
+ +                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+ +                                <h4 class="modal-title">Cena / Szt</h4>
+ +                                </div>
+ +                                <div class="modal-body">
+ +                                <p>Lorem Ipsum - Cena / Szt</p>
+ +                                </div>
+ +                                <div class="modal-footer">
+ +                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ +                                </div>
+ +                            </div>
+ +                        </div>
+ +                    </div>
+ +
+ +                        <a href="#" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#addToBasket">Dodaj do koszyka</a>
+                          
+ +                         <!-- Modal Dodaj do koszyka-->
+ +                         <div id="addToBasket" class="modal fade" role="dialog">
+ +                            <div class="modal-dialog">
+ +                                <!-- Modal content-->
+ +                                <div class="modal-content">
+ +                                    <div class="modal-header">
+ +                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+ +                                    <h4 class="modal-title">Dodaj do koszyka</h4>
+ +                                    </div>
+ +                                    <div class="modal-body">
+ +                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper consectetur ligula non tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis id ipsum ex. Fusce pellentesque viverra elit vel commodo.</p>
+ +                                    <a href="#" class="btn btn-success btn-lg btn-block">Dodaj do koszyka</a>
+ +                                    </div>
+ +                                    <div class="modal-footer">
+ +                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ +                                    </div>
+ +                                </div>
+ +                            </div>
+ +                        </div>
+ +
+ +                        <a href="#" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#priceDeliver">Koszty wysyłki</a>
+ +                        <!-- Modal Koszty wysylki-->
+ +                        <div id="priceDeliver" class="modal fade" role="dialog">
+ +                                <div class="modal-dialog">
+ +                                    <!-- Modal content-->
+ +                                    <div class="modal-content">
+ +                                        <div class="modal-header">
+ +                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+ +                                        <h4 class="modal-title">Koszty wysyłki</h4>
+ +                                        </div>
+ +                                        <div class="modal-body">
+ +                                        <form>
+ +                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka ekonomiczna - 8 zł<br>
+ +                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka kurierska - 13 zł<br>
+ +                                            <input type="radio" name="deliver" value="kurierska" checked> Przesyłka kurierska za pobraniem - 20 zł<br>
+ +                                        </form>
+ +                                        <a href="#" class="btn btn-info btn-lg btn-block">Wybierz</a>
+ +                                        </div>
+ +                                        <div class="modal-footer">
+ +                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ +                                        </div>
+ +                                    </div>
+ +                                </div>
+ +                            </div>
+
                     </div>
 
                     <div class="col-md-5" id="wizardPanel">
