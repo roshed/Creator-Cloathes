@@ -78,8 +78,8 @@
     <script>
             $(function(){
                 $("#wizardPanel").css("background-image", "url(img/tshirt.jpg)");
-                $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive"/> ');
-                $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive"/> ');
+                $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive link"/> ');
+                $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive linkb"/> ');
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
@@ -114,18 +114,19 @@
                         var reader = new FileReader();
 
                     reader.onload = function(e) {
-                    $(".load").attr('src', e.target.result);}
+                    $("#load").attr('src', e.target.result);}
 
                      reader.readAsDataURL(input.files[0]);};};
 
                 $("#image").change(function() {
                     readURL(this);
-                    $('.wizardPanel').prepend('<div class="add-file"><img src="#" class="added-img load"/></div>');
+                    $('.wizardPanel').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
+                    
                     $('.add-file')
                         .resizable()
-                        .draggable({ containment: "#wizardPanel", scroll: false });
+                        .draggable({ containment: "#wizardPanel", scroll: false, stack: "#wizardPanel div"});
+                });
                     
-});
           
             
 
