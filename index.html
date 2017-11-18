@@ -106,6 +106,7 @@
                     </div>
 
                     <div class="col-md-5" id="wizardPanel">
+                        <div class="product"></div>
                         <div class="wizardPanel"></div>
                         <div class="menage">
                                 <a href="#" class="btn btn-danger btn-sm text-btn">Dodaj tekst</a> 
@@ -168,30 +169,9 @@
                                                         </div>
                                                     </div>
 
-                            <a href="#" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveProject">Zapisz Projekt</a>
+                            <a href="#" id="saveProject" class="btn btn-success btn-lg btn-block">Zapisz Projekt</a>
 
-                                                 <!-- Modal Dodaj do koszyka-->
-                                                 <div id="saveProject" class="modal fade" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Zapisz projekt</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper consectetur ligula non tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis id ipsum ex. Fusce pellentesque viverra elit vel commodo.</p>
-                                                            <a href="#" class="btn btn-success btn-lg btn-block">Zapisz projekt</a>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-<<<<<<< HEAD
-                            <a href="#" class="btn btn-success btn-lg btn-block">Zapisz Projekt</a>
+        
 
                             <div class="text-form">
                                 <form class="message-form">
@@ -201,11 +181,13 @@
                                     </button>
                                 </form>
                             </div>
-=======
->>>>>>> 09bda3c0abc6c4aaab33bbee4eedd958a5ef4cd5
                     </div>
                 </div>
             </div>
+    </div>
+
+    <div class="lightbox">
+        <img src="" class="new-image"/>
     </div>
     
 
@@ -221,14 +203,14 @@
                 $('#image').click();
             });
             $(function(){
-                $("#wizardPanel").css("background-image", "url(img/tshirt.jpg)");
+                $(".product").html('<img src="img/tshirt.jpg" alt="Przód" class="img-responsive link"/>');
                 $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive link"/> ');
                 $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive linkb"/> ');
                 $('.clickItem').click(function(){
                     var attr = $(this).attr('href');
                     var link = "img/"+attr+".jpg";
                     var linkb = "img/"+attr+"b.jpg";
-                    $("#wizardPanel").css("background-image", "url("+link+")");
+                    $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
                     $(".front").html('<img src="'+link+'" alt="Przód" class="height-responsive link"/> ');
                     $(".back").html('<img src="'+linkb+'" alt="Tył" class="height-responsive linkb"/> ');
 
@@ -238,14 +220,14 @@
                 
                 $('.back').click(function(){
                      var link = $(".linkb").attr('src');
-                    $("#wizardPanel").css("background-image", "url("+link+")");
+                    $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive linkb"/> ');
                     $(this).hide();
                     $('.front').show();
                 });
                 
                 $('.front').click(function(){
                      var link = $(".link").attr('src');
-                    $("#wizardPanel").css("background-image", "url("+link+")");
+                    $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
                     $(this).hide();
                     $('.back').show();
                 });
@@ -278,7 +260,7 @@
                         $(".text-form").show();
 
                         $('.wizardPanel').prepend(
-                            '<div class="image-preview"><p class="image-message">Dodaj tekst!</p></div>'
+                            '<div id="text-div" class="image-preview"><p class="image-message">Dodaj tekst!</p></div>'
                         );
                     $('.image-preview')
                         .resizable({containment: ".wizardPanel"})
@@ -296,12 +278,17 @@
                         return false;
                     });
 
-                    $('.message-submit-button').on('click', function(){
-                        html2canvas($('.text-form'), {
+                    $('#saveProject').on('click', function(){
+                        html2canvas($('#wizardPanel'), {
                             onrendered: function(canvas) {
-                                var myImage = canvas.toDataURL('text/png');
+                                var myImage = canvas.toDataURL('image/jpg');
+                        $('.lightbox').fadeIn(200);
+                        $('.new-image').attr('src', myImage).fadeIn(200);
                             }
                         });
+          
+                    
+                       
                     });
 
                     $('.closebox').click(function(){
@@ -309,9 +296,6 @@
                     });
   
             });
-          
-            
-
 
         </script>
   </body>

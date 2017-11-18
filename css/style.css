@@ -12,11 +12,15 @@
     margin-bottom:70px;
 }
 #wizardPanel{
-    background-position: center;
-    background-size: cover;
     border: 1px solid #333333;
     max-width:70%;
-    height: 600px;
+    height: auto;
+}
+
+.product{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .wizardPanel{
@@ -35,8 +39,9 @@
 .menage{
     display: inline-block;
     position:absolute;
-    right: 2px;
-    bottom: 2px;
+    right: 0px;
+    bottom: -60px;
+    z-index: 10;
 }
 
 .rotate{
@@ -68,6 +73,26 @@
 .image-preview{
     height: 200px;
     width: 200px;
+}
+
+.lightbox{
+    display: none;
+    background: #fff;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    margin-top: -400px;
+    right: 50%;
+    margin-right: -300px;
+    height: 800px;
+    width: 600px;
+    border: 1px solid #333333;
+    z-index: 99;
+}
+
+.new-image{
+    width: 100%;
+    height: 100%;
 }
 
 #image, .text-form, .front{
