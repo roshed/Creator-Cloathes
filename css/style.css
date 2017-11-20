@@ -98,3 +98,6 @@
 #image, .text-form, .front{
     display: none;
 }
+.empty-text{
+    display: none !important;
+}

@@ -56,21 +56,24 @@ $(function(){
         
 $(document).ready(function(){
         $(".text-btn").click(function() {
-            $(".text-form").show();
 
             $('.wizardPanel').prepend(
                 '<div id="text-div" class="image-preview"><p class="image-message">Dodaj tekst!</p></div>'
             );
-            
+
+        $('.image-preview').editable({
+        type: 'text',
+        title: 'Enter username',
+        auto: '',
+        emptytext: "",
+        emptyclass: "empty-text"
+        });
         $('.image-preview')
             .resizable({containment: ".wizardPanel"})
             .draggable({containment: ".wizardPanel", scroll: false, stack: "#wizardPanel div"});
 
-        $('.image-preview').editable();
         });
         
-
-
         $('.message-box').keyup(function(){
             var value = $(this).val();
             $('.image-message').text(value);
@@ -94,9 +97,4 @@ $(document).ready(function(){
         
            
         });
-
-        $('.closebox').click(function(){
-            $('.text-form').hide();
-        });
-
 });
