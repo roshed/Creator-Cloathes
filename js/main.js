@@ -63,7 +63,7 @@ $(document).ready(function(){
 
         $('.image-preview').editable({
         type: 'text',
-        title: 'Enter username',
+        title: 'Wpisz swój tekst',
         auto: '',
         emptytext: "",
         emptyclass: "empty-text"
