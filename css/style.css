@@ -101,3 +101,7 @@
 .empty-text{
     display: none !important;
 }
+.editable-unsaved{
+    background-color: rgba(255,255,255,0.0);
+    border-bottom: dashed 0px #0088cc;
+}
