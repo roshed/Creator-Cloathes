@@ -106,5 +106,5 @@
     border-bottom: dashed 0px #0088cc !important;
 }
 .ui-draggable{
-position: absolute;
+position: absolute !important;
 }
