@@ -2,14 +2,14 @@ $('.image-btn').click(function(){
     $('#image').click();
 });
 $(function(){
-    $(".product").html('<img src="img/tshirt.jpg" alt="Przód" class="img-responsive link"/>');
+    $(".productFront").html('<img src="img/tshirt.jpg" alt="Przód" class="img-responsive link"/>');
     $(".front").html('<img src="img/tshirt.jpg" alt="Przód" class="height-responsive link"/> ');
     $(".back").html('<img src="img/tshirtb.jpg" alt="Tył" class="height-responsive linkb"/> ');
     $('.clickItem').click(function(){
         var attr = $(this).attr('href');
         var link = "img/"+attr+".jpg";
         var linkb = "img/"+attr+"b.jpg";
-        $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
+        $(".productFront").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
         $(".front").html('<img src="'+link+'" alt="Przód" class="height-responsive link"/> ');
         $(".back").html('<img src="'+linkb+'" alt="Tył" class="height-responsive linkb"/> ');
 
@@ -18,15 +18,23 @@ $(function(){
     });
     
     $('.back').click(function(){
-         var link = $(".linkb").attr('src');
-        $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive linkb"/> ');
+        var link = $(".linkb").attr('src');
+        $('.productFront').removeClass('active').hide();
+        $('.productBack').addClass('active').show();
+
+        $(".productBack .image").html('<img src="'+link+'" alt="Przód" class="img-responsive linkb"/> ');
         $(this).hide();
         $('.front').show();
     });
     
     $('.front').click(function(){
-         var link = $(".link").attr('src');
-        $(".product").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
+        var link = $(".link").attr('src');
+
+        $('.productBack').removeClass('active').hide();
+        $('.productFront').addClass('active').show();
+        
+        $(".productFront .image").html('<img src="'+link+'" alt="Przód" class="img-responsive link"/> ');
+        
         $(this).hide();
         $('.back').show();
     });
@@ -45,11 +53,11 @@ $(function(){
 
     $("#image").change(function() {
         readURL(this);
-        $('.wizardPanel').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
+        $('.active').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
         
         $('.add-file')
-            .resizable({containment: "#wizardPanel"})
-            .draggable({ containment: "#wizardPanel", scroll: false, stack: "#wizardPanel div"});
+            .resizable({containment: "#wizardPanel .active"})
+            .draggable({ containment: "#wizardPanel .active", scroll: false, stack: "#wizardPanel .active"});
     });
 
 
@@ -57,7 +65,7 @@ $(function(){
 $(document).ready(function(){
         $(".text-btn").click(function() {
 
-            $('.wizardPanel').prepend(
+            $('.active').prepend(
                 '<div id="text-div" class="image-preview"><p class="image-message">Dodaj tekst!</p></div>'
             );
 
@@ -69,8 +77,8 @@ $(document).ready(function(){
         emptyclass: "empty-text"
         });
         $('.image-preview')
-            .resizable({containment: ".wizardPanel"})
-            .draggable({containment: ".wizardPanel", scroll: false, stack: "#wizardPanel div"});
+            .resizable({containment: ".active"})
+            .draggable({containment: ".active", scroll: false, stack: ".active div"});
 
         });
         
