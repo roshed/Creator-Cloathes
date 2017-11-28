@@ -72,10 +72,7 @@
 
 .image-preview{height: 30px;width: 150px;}
 .pattern-img{ height: 130px; width: 150px;}
-.pattern-img img{
-    height: 100%;
-    width: 100%;
-}
+.pattern-img img{height: 100%;width: 100%;}
 .lightbox{
     display: none;
     background: #fff;
@@ -98,6 +95,15 @@
 
 #image, .text-form, .front{
     display: none;
+}
+.remove {
+    position: absolute !important;
+    right:0px !important;
+    top:0px !important;
+    padding:0px !important;
+    margin:0px !important;
+    color: #d9534f !important;
+
 }
 .empty-text{
     display: none !important;

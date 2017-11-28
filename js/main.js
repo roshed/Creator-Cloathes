@@ -53,7 +53,7 @@ $(function(){
 
     $("#image").change(function() {
         readURL(this);
-        $('.active').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
+        $('.active').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/><a href="#" class="btn btn-link remove glyphicon glyphicon-scissors"></a></div>');
         
         $('.add-file')
             .resizable({containment: "#wizardPanel .active"})
@@ -66,7 +66,7 @@ $(document).ready(function(){
         $(".text-btn").click(function() {
 
             $('.active').prepend(
-                '<div id="text-div" class="image-preview"><p class="image-message">Dodaj tekst!</p></div>'
+                '<div id="text-div" class="image-preview"><p class="image-message">Dodaj tekst!</p><a href="#" class="btn btn-link remove glyphicon glyphicon-scissors"></a></div>'
             );
 
         $('.image-preview').editable({
@@ -87,7 +87,7 @@ $(document).ready(function(){
         
         $('.pattern-select').click(function(){
             var img = $(this).html();
-            img = '<div class="pattern-img">'+img+'</div>';
+            img = '<div class="pattern-img">'+img+'<a href="#" class="btn btn-link remove glyphicon glyphicon-scissors"></a></div>';
             $('.active').prepend(img);
 
             //$('.active').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
@@ -96,7 +96,10 @@ $(document).ready(function(){
                 .resizable({containment: "#wizardPanel .active"})
                 .draggable({ containment: "#wizardPanel .active", scroll: false, stack: "#wizardPanel .active"});
         });
-
+        $('.remove').on('click',function(){
+            //$(this).parent('div').hide();
+            alert('echo');
+        });
 
 
         $('.message-box').keyup(function(){
@@ -110,16 +113,14 @@ $(document).ready(function(){
         });
 
         $('#saveProject').on('click', function(){
+            $('.remove').hide();
             html2canvas($('#wizardPanel'), {
                 onrendered: function(canvas) {
                     var myImage = canvas.toDataURL('image/jpg');
-            $('.lightbox').fadeIn(200);
-            $('.new-image').attr('src', myImage).fadeIn(200);
-            $('.new-image').attr('class', 'img-responsive');
+                    $('.lightbox').fadeIn(200);
+                    $('.new-image').attr('src', myImage).fadeIn(200);
+                    $('.new-image').attr('class', 'img-responsive');
                 }
             });
-
-        
-           
         });
 });
