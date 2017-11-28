@@ -77,8 +77,8 @@ $(document).ready(function(){
         emptyclass: "empty-text"
         });
         $('.image-preview')
-            .resizable({containment: ".active"})
-            .draggable({containment: ".active", scroll: false, stack: ".active div"});
+            .resizable({containment: "#wizardPanel .active"})
+            .draggable({containment: "#wizardPanel .active", scroll: false, stack: "#wizardPanel .active"});
 
         });
         
