@@ -81,7 +81,24 @@ $(document).ready(function(){
             .draggable({containment: "#wizardPanel .active", scroll: false, stack: "#wizardPanel .active"});
 
         });
+        $('.pattern-btn').click(function(){
+            $('.panelPattern').toggle();
+        });
         
+        $('.pattern-select').click(function(){
+            var img = $(this).html();
+            img = '<div class="pattern-img">'+img+'</div>';
+            $('.active').prepend(img);
+
+            //$('.active').prepend('<div class="add-file"><img src="#" id="load" class="added-img"/></div>');
+            
+            $('.pattern-img')
+                .resizable({containment: "#wizardPanel .active"})
+                .draggable({ containment: "#wizardPanel .active", scroll: false, stack: "#wizardPanel .active"});
+        });
+
+
+
         $('.message-box').keyup(function(){
             var value = $(this).val();
             $('.image-message').text(value);

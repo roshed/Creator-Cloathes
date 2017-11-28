@@ -64,17 +64,20 @@
     height: 100px;
 }
 
-.added-img{
+.added-img, .pattern-img{
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.image-preview{
-    height: 25px;
+.image-preview, .pattern-img{
+    height: 130px;
     width: 150px;
 }
-
+.pattern-img img{
+    height: 100%;
+    width: 100%;
+}
 .lightbox{
     display: none;
     background: #fff;
@@ -107,4 +110,14 @@
 }
 .ui-draggable{
 position: absolute !important;
+}
+.panelPattern{
+    position: absolute;
+    right: 0;
+    bottom:-150px;
+    z-index: 99;
+    border: 2px solid #d9534f;
+    background: #FFFFFF;
+    width: 50%;
+    display: none;
 }
